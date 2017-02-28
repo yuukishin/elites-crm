@@ -21,7 +21,8 @@
     Customer.create(
         family_name: family_name,
         given_name: given_name,
-        email: email
+        email: email,
+        company_id: rand(1..3)
     )
     
 end
