@@ -9,12 +9,15 @@ class CommentsController < ApplicationController
     end
     
     def create
-        @comment = Comment.new(comment_params)
-        if @comment.save
-            redirect_to customer_path(@comment.customer_id)
-        else
-            redirect_to customer_path(@commnet.customer_id)
-        end
+          @comment = Comment.new(comment_params)
+          if @comment.valid?
+              @comment.save
+              redirect_to customer_path(@comment.customer_id)
+          else
+                @customer = Customer.find(@comment.customer_id)
+                @comments = Comment.where(customer_id: params[:id].to_i)
+              render template: "customers/show"
+          end
     end
     
     def edit
