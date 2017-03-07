@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only:[:index, :show, :new, :create, :edit, :update, :destroy]
   before_action :set_customer, only:[:show, :destroy, :edit, :update]
   def index
     # @customers = Customer.all
@@ -50,6 +50,7 @@ class CustomersController < ApplicationController
       :family_name,
       :given_name,
       :email,
+      :image_url,
       :company_id,
       :post_id
       )

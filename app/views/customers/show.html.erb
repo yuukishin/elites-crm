@@ -41,6 +41,8 @@
     <% end %>
     
     <hr />
+    <%= image_tag(current_user.image_url, :width => "100px", :height => "100px") %>
+
     <%= form_for(@comment, url: { controller: :comments, action: :create }) do |f| %>
       <div class="form-group">
         <%= f.label :body , '対応内容' %><br>
