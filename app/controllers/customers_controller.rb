@@ -50,7 +50,6 @@ class CustomersController < ApplicationController
       :family_name,
       :given_name,
       :email,
-      :image_url,
       :company_id,
       :post_id
       )
