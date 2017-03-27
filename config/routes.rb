@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   root 'customers#index'
   
   resources :comments, only: [:create, :destroy]
-  
   get 'customers/index'
 
   get 'customers/new'

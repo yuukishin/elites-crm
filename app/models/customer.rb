@@ -5,8 +5,10 @@ class Customer < ActiveRecord::Base
     validates :family_name,
         presence: true, length: {maximum: 20}
     validates :given_name,
-        presence: true, length: {maximum: 20}
+        presence: true, length: {maximum: 200}
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    # validates :image_url,
+    #     presence: true, length: {maximum: 200}
     validates :email,
         presence: true, format: { with: VALID_EMAIL_REGEX}, uniqueness: true
     validates :company_id, presence: true
